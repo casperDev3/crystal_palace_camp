@@ -261,6 +261,43 @@
   .section-p.light { color: rgba(255,255,255,.6); }
   .tc { text-align: center; }
   .tc .section-p { margin: 0 auto; }
+  .section-narrow { max-width: 760px; margin: 0 auto; }
+  .section-block {
+    display: grid; grid-template-columns: 1.05fr 1fr;
+    gap: 3.2rem; align-items: center;
+  }
+  .section-block.reverse { grid-template-columns: 1fr 1.05fr; }
+  .section-media {
+    position: relative; overflow: hidden; border-radius: 6px;
+    min-height: 360px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.18);
+  }
+  .section-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .text-cards {
+    display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 1.2rem; margin-top: 1.6rem;
+  }
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--light2);
+    padding: 1.2rem 1.2rem 1.1rem;
+    border-radius: 4px;
+    box-shadow: 0 8px 26px rgba(162,144,97,.12);
+  }
+  .info-card h4 {
+    font-size: .85rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--gold); margin-bottom: .5rem; font-weight: 700;
+  }
+  .info-card p { font-size: .88rem; line-height: 1.7; color: #666; }
+  .dot-list { list-style: none; margin-top: 1.2rem; display: grid; gap: .7rem; }
+  .dot-list li {
+    display: flex; gap: .6rem; align-items: flex-start;
+    font-size: .9rem; color: #666; line-height: 1.7;
+  }
+  .dot-list li::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); margin-top: .55rem; flex-shrink: 0;
+  }
 
   /*──────────────────────────────────────────
     ABOUT
@@ -811,6 +848,8 @@
     .food-img-side { min-height: 420px; }
     .about-img-overlay, .food-img-overlay { display: none; }
     .accom-grid { grid-template-columns: 1fr 1fr; }
+    .section-block, .section-block.reverse { grid-template-columns: 1fr; }
+    .section-media { min-height: 300px; }
     .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px; }
     .g-big { grid-row: span 1; }
     .reg-wrap { gap: 4rem; }
@@ -831,6 +870,7 @@
     .scroll-ind { display: none; }
   }
   @media (max-width: 640px) {
+    .text-cards { grid-template-columns: 1fr; }
     .modal { padding: 0; }
     .modal-panel {
       width: 100%; height: 100%;
@@ -919,6 +959,41 @@
         <div class="feat-item"><div class="feat-dot"></div>4-разове харчування</div>
         <div class="feat-item"><div class="feat-dot"></div>Медичний персонал</div>
         <div class="feat-item"><div class="feat-dot"></div>Трансфер з Києва</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CAMP LIFE ═══════════════ -->
+<section id="camp-life" class="section">
+  <div class="section-block">
+    <div class="section-media">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=85"
+           alt="Діти на природі"/>
+    </div>
+    <div>
+      <div class="section-eyebrow">
+        <div class="line"></div><span>Кришталевий палац</span>
+      </div>
+      <h2 class="section-h">Дитячий табір у Кришталевому палаці</h2>
+      <p class="section-p">Це місце веселого відпочинку, нових друзів і щоденних пригод. Діти беруть участь у квестах, змаганнях, творчих майстер-класах та концертах.</p>
+      <div class="text-cards">
+        <div class="info-card">
+          <h4>Щоденні пригоди</h4>
+          <p>Кожен день у таборі наповнений радістю, сміхом і цікавими подіями.</p>
+        </div>
+        <div class="info-card">
+          <h4>Літні вечори</h4>
+          <p>Коли сонце заходить, діти співають пісні, танцюють і проводять час разом.</p>
+        </div>
+        <div class="info-card">
+          <h4>Дружба</h4>
+          <p>Саме тут народжується справжня табірна дружба і теплі спогади.</p>
+        </div>
+        <div class="info-card">
+          <h4>Нове щодня</h4>
+          <p>Літо стає незабутнім, а кожен день приносить нові враження.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1236,6 +1311,30 @@
   </div>
 </section>
 
+<!-- ═══════════════ WHY PALACE ═══════════════ -->
+<section id="why-palace" class="section" style="background: var(--light);">
+  <div class="section-block reverse">
+    <div>
+      <div class="section-eyebrow">
+        <div class="line"></div><span>Чому саме</span>
+      </div>
+      <h2 class="section-h">Чому табір у Кришталевому палаці — ідеальне місце для дітей?</h2>
+      <p class="section-p">Табір проходить на території санаторію серед парку: велика закрита зона, багато зелені, свіже повітря та спокійна атмосфера.</p>
+      <ul class="dot-list">
+        <li>Поєднання природи та насиченої програми на свіжому повітрі.</li>
+        <li>Командні ігри, творчі майстер-класи, танці та вечірні події.</li>
+        <li>Великий зал і приміщення для активностей у дощову погоду.</li>
+        <li>Спортивні майданчики, простір для ігор і прогулянок.</li>
+      </ul>
+      <p class="section-p" style="margin-top:1rem;">Особлива атмосфера — це літні вечори, коли вся команда збирається разом. Саме заради таких моментів діти повертаються знову.</p>
+    </div>
+    <div class="section-media">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85"
+           alt="Парк і природа навколо табору"/>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ REFERRAL ═══════════════ -->
 <section id="referral">
   <div class="ref-inner">
@@ -1397,6 +1496,41 @@
       <button type="submit" class="form-submit">Надіслати заявку →</button>
       <p class="form-note">Натискаючи кнопку, ви погоджуєтесь з умовами обробки персональних даних</p>
     </form>
+  </div>
+</section>
+
+<!-- ═══════════════ SAFETY ═══════════════ -->
+<section id="safety" class="section">
+  <div class="section-block">
+    <div class="section-media">
+      <img src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?w=1200&q=85"
+           alt="Безпека і турбота"/>
+    </div>
+    <div>
+      <div class="section-eyebrow">
+        <div class="line"></div><span>Безпека</span>
+      </div>
+      <h2 class="section-h">Безпека в дитячому таборі у Кришталевому палаці</h2>
+      <p class="section-p">Територія табору закрита, працює охорона, а діти завжди під наглядом вихователів. Усі заходи проводяться за правилами безпеки.</p>
+      <div class="text-cards">
+        <div class="info-card">
+          <h4>Контроль території</h4>
+          <p>Закрита зона, контроль входу та постійна присутність персоналу.</p>
+        </div>
+        <div class="info-card">
+          <h4>Медичний супровід</h4>
+          <p>Медичний працівник слідкує за самопочуттям і готовий допомогти.</p>
+        </div>
+        <div class="info-card">
+          <h4>Профілактика</h4>
+          <p>Перед іграми та змаганнями пояснюємо правила, щоб уникнути травм.</p>
+        </div>
+        <div class="info-card">
+          <h4>Спокій для батьків</h4>
+          <p>Безпека — це турбота про кожну дитину та впевненість батьків.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
