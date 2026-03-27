@@ -34,7 +34,7 @@
     background: var(--white);
     overflow-x: hidden;
   }
-  img { display: block; }
+  img { display: block; max-width: 100%; }
 
   /*──────────────────────────────────────────
     SCROLLBAR
@@ -66,7 +66,9 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url('https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=1800&q=85') center/cover no-repeat;
+    background: url('media/hero.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
     transform: scale(1.05);
     animation: heroZoom 12s ease-in-out infinite alternate;
   }
@@ -272,7 +274,13 @@
     min-height: 360px;
     box-shadow: 0 18px 50px rgba(0,0,0,.18);
   }
-  .section-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .section-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
   .text-cards {
     display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 1.2rem; margin-top: 1.6rem;
@@ -310,6 +318,7 @@
   .about-img-side { position: relative; overflow: hidden; }
   .about-img-side img {
     width: 100%; height: 100%; object-fit: cover;
+    object-position: center center;
     transition: transform 8s var(--easing);
   }
   .about-img-side:hover img { transform: scale(1.04); }
@@ -352,13 +361,14 @@
   /*──────────────────────────────────────────
     SESSIONS
   ──────────────────────────────────────────*/
-  #sessions { background: var(--white); }
+  #sessions { background: var(--white); display: none;}
   .sessions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 1.5px; margin-top: 4rem;
     background: var(--light2);
     border: 1px solid var(--light2);
+    
   }
   .session-card {
     background: var(--white);
@@ -493,6 +503,18 @@
     color: var(--white); margin-bottom: .7rem; letter-spacing: .3px;
   }
   .prog-card p { font-size: .8rem; color: rgba(255,255,255,.45); line-height: 1.7; font-weight: 300; }
+  .prog-list {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    display: grid;
+    gap: .45rem;
+  }
+  .prog-list li {
+    font-size: .76rem;
+    color: rgba(255,255,255,.62);
+    line-height: 1.55;
+    font-weight: 300;
+  }
   .prog-tag {
     display: inline-block; margin-top: 1rem;
     font-size: .6rem; font-weight: 700; letter-spacing: 2px;
@@ -515,6 +537,7 @@
   .g-item { overflow: hidden; position: relative; }
   .g-item img {
     width: 100%; height: 100%; object-fit: cover;
+    object-position: center center;
     transition: transform .6s var(--easing);
   }
   .g-item:hover img { transform: scale(1.08); }
@@ -537,7 +560,7 @@
   #food { background: var(--light); padding: 0; }
   .food-wrap { display: grid; grid-template-columns: 1fr 1fr; }
   .food-img-side { position: relative; min-height: 600px; overflow: hidden; }
-  .food-img-side img { width: 100%; height: 100%; object-fit: cover; }
+  .food-img-side img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   .food-img-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to left, var(--light) 0%, transparent 50%);
@@ -566,7 +589,7 @@
   .accom-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 4rem; }
   .accom-card { position: relative; overflow: hidden; aspect-ratio: 3/4; }
   .accom-card { cursor: pointer; }
-  .accom-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--easing); }
+  .accom-card img { width: 100%; height: 100%; object-fit: cover; object-position: center center; transition: transform .6s var(--easing); }
   .accom-card:hover img { transform: scale(1.06); }
   .accom-card-overlay {
     position: absolute; inset: 0;
@@ -611,7 +634,7 @@
     display: grid; grid-template-columns: 1.1fr 1fr;
   }
   .modal-media { background: var(--dark); }
-  .modal-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .modal-media img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
   .modal-content { padding: 2.2rem; }
   .modal-title {
     font-family: 'Cormorant Garamond', serif;
@@ -712,7 +735,7 @@
   }
   .testi-text { font-size: .88rem; color: #666; line-height: 1.8; font-style: italic; font-weight: 300; margin-bottom: 2rem; }
   .testi-author { display: flex; align-items: center; gap: .9rem; }
-  .testi-av { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--light2); }
+  .testi-av { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: center center; border: 2px solid var(--light2); }
   .testi-name { font-weight: 700; font-size: .85rem; }
   .testi-role { font-size: .72rem; color: #aaa; margin-top: 1px; }
 
@@ -933,7 +956,6 @@
   <div class="about-wrap">
     <div class="about-img-side">
       <img src="media/about-main.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?w=1000&q=85'"
            alt="Табір Crystal Palace"/>
       <div class="about-img-overlay"></div>
       <div class="about-award">
@@ -968,8 +990,8 @@
 <section id="camp-life" class="section">
   <div class="section-block">
     <div class="section-media">
-      <img src="media/camp-life.jpg"
-           alt="Діти на природі"/>
+      <img src="media/camp-life-activity.jpg"
+           alt="Діти на табірній активності"/>
     </div>
     <div>
       <div class="section-eyebrow">
@@ -1110,84 +1132,76 @@
   <div class="tc">
     <div class="section-eyebrow center">
       <div class="line" style="background:rgba(162,144,97,.4)"></div>
-      <span>Що ми робимо</span>
+      <span>Програма табору</span>
       <div class="line" style="background:rgba(162,144,97,.4)"></div>
     </div>
-    <h2 class="section-h light">Насичена програма<br/>кожного дня</h2>
-    <p class="section-p light">Жоден день не схожий на інший — активності на будь-який смак і вік</p>
+    <h2 class="section-h light">Комплексна програма<br/>кожної зміни</h2>
+    <p class="section-p light">Освітній, оздоровчий, медичний та відпочинковий напрямки для всебічного розвитку дітей.</p>
   </div>
   <div class="program-grid">
     <div class="prog-card">
       <div class="prog-num">01</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19l6-10 4 6 3-4 5 8H3z"/></svg>
-      </div>
-      <h3>Гірські походи</h3>
-      <p>Сходження на карпатські вершини з досвідченими інструкторами в малих групах.</p>
-      <span class="prog-tag">Активний відпочинок</span>
+      <h3>Освітня програма</h3>
+      <p>Освітня програма спрямована на всебічний розвиток дитини та передбачає:</p>
+      <ul class="prog-list">
+        <li>Розвиток ключових компетентностей (мовленнєвих, математичних, соціальних).</li>
+        <li>Проведення пізнавальних занять у цікавій ігровій формі.</li>
+        <li>Організацію майстер-класів (творчих, наукових, практичних).</li>
+        <li>Розвиток критичного мислення, уяви та креативності.</li>
+        <li>Формування навичок командної роботи та комунікації.</li>
+        <li>Проведення тематичних днів (екологічних, історичних, культурних).</li>
+        <li>Ознайомлення з основами безпеки життєдіяльності.</li>
+        <li>Використання інтерактивних технологій навчання.</li>
+      </ul>
+      <span class="prog-tag">Розвиток компетентностей</span>
     </div>
     <div class="prog-card">
       <div class="prog-num">02</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.1L18 9l-4.2 1.9L12 15l-1.8-4.1L6 9l4.2-1.9L12 3z"/><path d="M5 16l.8 1.8L8 18l-2.2 1.2L5 21l-.8-1.8L2 18l2.2-1.2L5 16z"/></svg>
-      </div>
-      <h3>Творчі майстерні</h3>
-      <p>Відеозйомка, stop-motion анімація, малювання, фотографія, скульптура.</p>
-      <span class="prog-tag">Творчість</span>
+      <h3>Оздоровча програма</h3>
+      <p>Оздоровча програма спрямована на зміцнення фізичного та психічного здоров'я дитини:</p>
+      <ul class="prog-list">
+        <li>Щоденна ранкова гімнастика.</li>
+        <li>Рухливі ігри на свіжому повітрі.</li>
+        <li>Спортивні змагання та естафети.</li>
+        <li>Прогулянки та перебування на природі.</li>
+        <li>Заходи з профілактики перевтоми та стресу.</li>
+        <li>Формування здорового способу життя.</li>
+        <li>Дотримання режиму дня (сон, харчування, активність).</li>
+        <li>Психологічна підтримка та створення комфортного емоційного середовища.</li>
+      </ul>
+      <span class="prog-tag">Здоров'я і баланс</span>
     </div>
     <div class="prog-card">
       <div class="prog-num">03</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-      </div>
-      <h3>Лазертаг і квести</h3>
-      <p>Командні ігри на свіжому повітрі, рольові квести та нічні пригоди.</p>
-      <span class="prog-tag">Командна гра</span>
+      <h3>Медична програма</h3>
+      <p>Медична програма забезпечує контроль та підтримку стану здоров'я дітей:</p>
+      <ul class="prog-list">
+        <li>Первинний медичний огляд при заїзді.</li>
+        <li>Щоденний контроль самопочуття дітей.</li>
+        <li>Надання першої медичної допомоги у разі потреби.</li>
+        <li>Виконання індивідуальних медичних рекомендацій.</li>
+        <li>Проведення профілактичних заходів.</li>
+        <li>Контроль за дотриманням санітарно-гігієнічних норм.</li>
+        <li>Організація лікувально-оздоровчих процедур (за показаннями).</li>
+        <li>Взаємодія з батьками щодо стану здоров'я дитини.</li>
+      </ul>
+      <span class="prog-tag">Медичний супровід</span>
     </div>
     <div class="prog-card">
       <div class="prog-num">04</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9.5c3 .4 5.4 2.5 6.5 5.5"/><path d="M20.5 14.5c-3-.4-5.4-2.5-6.5-5.5"/><path d="M7 4.5c2.6 1 4.7 3.2 5.2 5.8"/><path d="M17 19.5c-2.6-1-4.7-3.2-5.2-5.8"/></svg>
-      </div>
-      <h3>Спорт</h3>
-      <p>Волейбол, футбол, плавання, йога, ранкові зарядки та спортивні турніри.</p>
-      <span class="prog-tag">Здоровʼя</span>
-    </div>
-    <div class="prog-card">
-      <div class="prog-num">05</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5v9.5a3 3 0 1 1-2-2.8V6.2l9-2v8.3a2.5 2.5 0 1 1-2-2.4V3z"/></svg>
-      </div>
-      <h3>Вечірні шоу</h3>
-      <p>Концерти, дискотеки, кінопокази під зірками та яскраві гала-вечори.</p>
-      <span class="prog-tag">Розваги</span>
-    </div>
-    <div class="prog-card">
-      <div class="prog-num">06</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14c6-9 14-9 16-9-1 7-5 13-12 14-3 .4-4-2-4-5z"/><path d="M7 15c2 0 5-1 8-4"/></svg>
-      </div>
-      <h3>Природа і екологія</h3>
-      <p>Вивчення карпатської флори та фауни, орієнтування на місцевості.</p>
-      <span class="prog-tag">Освіта</span>
-    </div>
-    <div class="prog-card">
-      <div class="prog-num">07</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16"/><path d="M5 4h11l-2.5 3L16 10H5"/></svg>
-      </div>
-      <h3>Лідерство</h3>
-      <p>Тімбілдінги, дебати, публічні виступи та управлінські ігри.</p>
-      <span class="prog-tag">Розвиток</span>
-    </div>
-    <div class="prog-card">
-      <div class="prog-num">08</div>
-      <div class="prog-icon">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h7a3 3 0 0 1 3 3v11H6a3 3 0 0 0-3 3V5z"/><path d="M21 5h-7a3 3 0 0 0-3 3v11h7a3 3 0 0 1 3 3V5z"/></svg>
-      </div>
-      <h3>Англійська мова</h3>
-      <p>Розмовні клуби з носіями мови в неформальній ігровій атмосфері.</p>
-      <span class="prog-tag">Навчання</span>
+      <h3>Програма відпочинку</h3>
+      <p>Програма відпочинку спрямована на цікаве, активне та емоційно насичене дозвілля:</p>
+      <ul class="prog-list">
+        <li>Організація розважальних заходів (концерти, шоу, конкурси).</li>
+        <li>Тематичні вечори та дискотеки.</li>
+        <li>Квести, ігри та командні активності.</li>
+        <li>Перегляд фільмів та мультфільмів.</li>
+        <li>Екскурсії та прогулянки.</li>
+        <li>Творчі виступи дітей.</li>
+        <li>Святкові заходи та фестивалі.</li>
+        <li>Розвиток дружніх стосунків та позитивної атмосфери в колективі.</li>
+      </ul>
+      <span class="prog-tag">Яскраве дозвілля</span>
     </div>
   </div>
 </section>
@@ -1205,28 +1219,23 @@
   <div class="gallery-grid">
     <div class="g-item g-big">
       <img src="media/gallery-1.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=900&q=85'"
-           alt="Табір"/>
+           alt="Загальний табірний день"/>
     </div>
     <div class="g-item">
       <img src="media/gallery-2.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?w=700&q=85'"
-           alt="Діти"/>
+           alt="Діти на вечірній події"/>
     </div>
     <div class="g-item">
       <img src="media/gallery-3.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1576267423048-15c0040fec78?w=700&q=85'"
-           alt="Спорт"/>
+           alt="Квестове завдання"/>
     </div>
     <div class="g-item">
       <img src="media/gallery-4.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=700&q=85'"
-           alt="Творчість"/>
+           alt="Командна активність"/>
     </div>
     <div class="g-item">
       <img src="media/gallery-5.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=85'"
-           alt="Природа"/>
+           alt="Екскурсія табором"/>
     </div>
   </div>
   <p class="gallery-note">Більше фото у нашому Instagram · @crystalpalace.camp</p>
@@ -1237,8 +1246,7 @@
   <div class="food-wrap">
     <div class="food-img-side">
       <img src="media/food.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1000&q=85'"
-           alt="Харчування"/>
+           alt="Сервірування обіду"/>
       <div class="food-img-overlay"></div>
     </div>
     <div class="food-text-side">
@@ -1274,8 +1282,7 @@
          data-text="Світлі кімнати на 4–6 дітей із натуральними матеріалами, ортопедичними матрацами та достатнім простором для зберігання."
          data-list="Окремі санвузли на поверхах|Провітрювання і щоденне прибирання|Нічне освітлення і чергування вожатих">
       <img src="media/accom-1.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=700&q=85'"
-           alt="Кімнати"/>
+           alt="Інфраструктура табору"/>
       <div class="accom-card-overlay"></div>
       <div class="accom-card-body">
         <h3>Комфортні кімнати</h3>
@@ -1287,8 +1294,7 @@
          data-text="Затишні простори для спілкування, настільних ігор та читання після активного дня."
          data-list="Ігрові кімнати з безпечним інвентарем|Бібліотека і тихі зони|Невеликі лаунж-простори для команд">
       <img src="media/accom-2.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=85'"
-           alt="Зони відпочинку"/>
+           alt="Зона спілкування на території"/>
       <div class="accom-card-overlay"></div>
       <div class="accom-card-body">
         <h3>Зони відпочинку</h3>
@@ -1300,8 +1306,7 @@
          data-text="Табір розташований у лісі, поруч річка та маршрути для прогулянок — свіже повітря і мінімум міського шуму."
          data-list="Екопокриття доріжок|Маршрути для прогулянок з інструкторами|Безпечна територія з охороною">
       <img src="media/accom-3.jpg"
-           onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=85'"
-           alt="Природа"/>
+           alt="Природне оточення табору"/>
       <div class="accom-card-overlay"></div>
       <div class="accom-card-body">
         <h3>Природне середовище</h3>
@@ -1380,7 +1385,7 @@
       <div class="testi-quote-icon">"</div>
       <p class="testi-text">Донька повернулась зовсім іншою дитиною — впевненою, самостійною. Вожаті просто золото. Вже бронюємо на наступне літо!</p>
       <div class="testi-author">
-        <img class="testi-av" src="https://i.pravatar.cc/100?img=47" alt="Оксана М."/>
+        <img class="testi-av" src="media/avatar-1.jpg" alt="Оксана М."/>
         <div><div class="testi-name">Оксана М.</div><div class="testi-role">Мама Аліни, 11 р. · Київ</div></div>
       </div>
     </div>
@@ -1392,7 +1397,7 @@
       <div class="testi-quote-icon">"</div>
       <p class="testi-text">Сину дуже сподобались гірські походи. Каже, що це найкраще літо в його житті. Дякуємо команді Crystal Palace!</p>
       <div class="testi-author">
-        <img class="testi-av" src="https://i.pravatar.cc/100?img=12" alt="Василь К."/>
+        <img class="testi-av" src="media/avatar-2.jpg" alt="Василь К."/>
         <div><div class="testi-name">Василь К.</div><div class="testi-role">Тато Богдана, 13 р. · Львів</div></div>
       </div>
     </div>
@@ -1404,7 +1409,7 @@
       <div class="testi-quote-icon">"</div>
       <p class="testi-text">Відправляли дитину вперше і дуже переживали. Але організація на вищому рівні — фото щодня, постійний зв'язок. Вдячні!</p>
       <div class="testi-author">
-        <img class="testi-av" src="https://i.pravatar.cc/100?img=32" alt="Ірина Л."/>
+        <img class="testi-av" src="media/avatar-3.jpg" alt="Ірина Л."/>
         <div><div class="testi-name">Ірина Л.</div><div class="testi-role">Мама Марка, 9 р. · Харків</div></div>
       </div>
     </div>
