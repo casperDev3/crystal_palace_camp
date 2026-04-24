@@ -892,6 +892,106 @@
     .hero-phone { position: static; text-align: left; margin-top: 2rem; }
     .scroll-ind { display: none; }
   }
+  /*──────────────────────────────────────────
+    PROGRAMS
+  ──────────────────────────────────────────*/
+  #programs { background: var(--dark); }
+  #programs .section-h { color: var(--white); }
+  #programs .section-p { color: rgba(255,255,255,.5); }
+  .prog-tabs { display: flex; gap: 0; margin-top: 3rem; border-bottom: 1px solid rgba(255,255,255,.1); flex-wrap: wrap; }
+  .prog-tab {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,.35); padding: 1rem 2rem;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color .2s, border-color .2s;
+  }
+  .prog-tab:hover { color: rgba(255,255,255,.7); }
+  .prog-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .prog-panels { margin-top: 2.5rem; }
+  .prog-panel { display: none; }
+  .prog-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .prog-panel-intro {
+    font-size: .9rem; color: rgba(255,255,255,.6); line-height: 1.8;
+    font-weight: 300; margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .prog-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+  .prog-list li {
+    font-size: .85rem; color: rgba(255,255,255,.55); line-height: 1.7;
+    font-weight: 300; padding-left: 1.4rem; position: relative;
+  }
+  .prog-list li::before {
+    content: ''; position: absolute; left: 0; top: .65em;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .prog-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem; font-weight: 600; line-height: 1;
+    color: rgba(162,144,97,.12); user-select: none;
+    margin-bottom: 1rem;
+  }
+  .prog-label {
+    font-size: .65rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: .8rem;
+  }
+  .prog-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 600;
+    color: var(--white); line-height: 1.2;
+  }
+  @media (max-width: 768px) {
+    .prog-panel.active { grid-template-columns: 1fr; gap: 2rem; }
+    .prog-tabs { gap: 0; }
+    .prog-tab { padding: .8rem 1rem; font-size: .65rem; }
+    .prog-number { font-size: 5rem; }
+  }
+
+  /*──────────────────────────────────────────
+    RIGHTS
+  ──────────────────────────────────────────*/
+  #rights { background: var(--light); }
+  .rights-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+  .rights-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    font-weight: 600; color: var(--dark); line-height: 1.15;
+    margin: .8rem 0 1.5rem;
+  }
+  .rights-left p { font-size: .88rem; color: #888; font-weight: 300; line-height: 1.8; margin-top: 1rem; }
+  .rights-subtitle {
+    font-size: .65rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; margin-top: 2rem;
+  }
+  .rights-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+  .rights-list li {
+    font-size: .85rem; color: #555; line-height: 1.7; font-weight: 300;
+    padding-left: 1.4rem; position: relative;
+  }
+  .rights-list li::before {
+    content: ''; position: absolute; left: 0; top: .6em;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), var(--gold));
+    flex-shrink: 0;
+  }
+  .rights-obligations {
+    background: var(--white);
+    border-left: 3px solid var(--red);
+    padding: 1.5rem 1.8rem;
+    margin-top: 2rem;
+    border-radius: 0 2px 2px 0;
+  }
+  .rights-obligations p { font-size: .85rem; color: #555; line-height: 1.7; font-weight: 300; }
+  .rights-obligations p + p { margin-top: .8rem; }
+  .rights-law-note {
+    font-size: .72rem; color: #aaa; font-style: italic; margin-top: .5rem;
+  }
+  @media (max-width: 1024px) {
+    .rights-wrap { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
   @media (max-width: 640px) {
     .text-cards { grid-template-columns: 1fr; }
     .modal { padding: 0; }
@@ -1600,6 +1700,184 @@
   </div>
 </section>
 
+<!-- ═══════════════ PROGRAMS ═══════════════ -->
+<section id="programs" class="section">
+  <div class="tc">
+    <div class="section-eyebrow center">
+      <div class="line" style="background:rgba(162,144,97,.4)"></div>
+      <span>Програми</span>
+      <div class="line" style="background:rgba(162,144,97,.4)"></div>
+    </div>
+    <h2 class="section-h">Зміст програм табору</h2>
+    <p class="section-p">Чотири взаємодоповнюючі програми для всебічного розвитку, здоров'я та яскравого відпочинку кожної дитини</p>
+  </div>
+
+  <div class="prog-tabs">
+    <button class="prog-tab active" onclick="switchProgTab(this, 'prog-edu')">1. Освітня</button>
+    <button class="prog-tab" onclick="switchProgTab(this, 'prog-health')">2. Оздоровча</button>
+    <button class="prog-tab" onclick="switchProgTab(this, 'prog-medical')">3. Медична</button>
+    <button class="prog-tab" onclick="switchProgTab(this, 'prog-rest')">4. Відпочинку</button>
+  </div>
+
+  <div class="prog-panels">
+
+    <div id="prog-edu" class="prog-panel active">
+      <div>
+        <div class="prog-number">01</div>
+        <div class="prog-label">Розвиток</div>
+        <div class="prog-title">Освітня програма</div>
+      </div>
+      <div>
+        <p class="prog-panel-intro">Освітня програма спрямована на всебічний розвиток дитини та передбачає різноманітні форми навчання у невимушеній атмосфері.</p>
+        <ul class="prog-list">
+          <li>Розвиток ключових компетентностей (мовленнєвих, математичних, соціальних)</li>
+          <li>Проведення пізнавальних занять у цікавій ігровій формі</li>
+          <li>Організація майстер-класів (творчих, наукових, практичних)</li>
+          <li>Розвиток критичного мислення, уяви та креативності</li>
+          <li>Формування навичок командної роботи та комунікації</li>
+          <li>Проведення тематичних днів (екологічних, історичних, культурних)</li>
+          <li>Ознайомлення з основами безпеки життєдіяльності</li>
+          <li>Використання інтерактивних технологій навчання</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="prog-health" class="prog-panel">
+      <div>
+        <div class="prog-number">02</div>
+        <div class="prog-label">Здоров'я</div>
+        <div class="prog-title">Оздоровча програма</div>
+      </div>
+      <div>
+        <p class="prog-panel-intro">Оздоровча програма спрямована на зміцнення фізичного та психічного здоров'я дитини у природному середовищі Карпат.</p>
+        <ul class="prog-list">
+          <li>Щоденна ранкова гімнастика</li>
+          <li>Рухливі ігри на свіжому повітрі</li>
+          <li>Спортивні змагання та естафети</li>
+          <li>Прогулянки та перебування на природі</li>
+          <li>Заходи з профілактики перевтоми та стресу</li>
+          <li>Формування здорового способу життя</li>
+          <li>Дотримання режиму дня (сон, харчування, активність)</li>
+          <li>Психологічна підтримка та створення комфортного емоційного середовища</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="prog-medical" class="prog-panel">
+      <div>
+        <div class="prog-number">03</div>
+        <div class="prog-label">Медицина</div>
+        <div class="prog-title">Медична програма</div>
+      </div>
+      <div>
+        <p class="prog-panel-intro">Медична програма забезпечує постійний контроль та підтримку стану здоров'я кожної дитини протягом усієї зміни.</p>
+        <ul class="prog-list">
+          <li>Первинний медичний огляд при заїзді</li>
+          <li>Щоденний контроль самопочуття дітей</li>
+          <li>Надання першої медичної допомоги у разі потреби</li>
+          <li>Виконання індивідуальних медичних рекомендацій</li>
+          <li>Проведення профілактичних заходів</li>
+          <li>Контроль за дотриманням санітарно-гігієнічних норм</li>
+          <li>Організація лікувально-оздоровчих процедур (за показаннями)</li>
+          <li>Взаємодія з батьками щодо стану здоров'я дитини</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="prog-rest" class="prog-panel">
+      <div>
+        <div class="prog-number">04</div>
+        <div class="prog-label">Дозвілля</div>
+        <div class="prog-title">Програма відпочинку</div>
+      </div>
+      <div>
+        <p class="prog-panel-intro">Програма відпочинку спрямована на цікаве, активне та емоційно насичене дозвілля — кожен день повний яскравих вражень.</p>
+        <ul class="prog-list">
+          <li>Організація розважальних заходів (концерти, шоу, конкурси)</li>
+          <li>Тематичні вечори та дискотеки</li>
+          <li>Квести, ігри та командні активності</li>
+          <li>Перегляд фільмів та мультфільмів</li>
+          <li>Екскурсії та прогулянки</li>
+          <li>Творчі виступи дітей</li>
+          <li>Святкові заходи та фестивалі</li>
+          <li>Розвиток дружніх стосунків та позитивної атмосфери в колективі</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ RIGHTS ═══════════════ -->
+<section id="rights" class="section">
+  <div class="rights-wrap">
+    <div class="rights-left">
+      <div class="section-eyebrow">
+        <div class="line"></div><span>Законодавство</span>
+      </div>
+      <h2>Права та обов'язки дітей</h2>
+      <p>Відповідно до Закону України "Про оздоровлення та відпочинок дітей", кожна дитина під час перебування в нашому таборі має гарантовані права та несе певні обов'язки.</p>
+    </div>
+    <div>
+      <div class="rights-subtitle">Права дитини в таборі</div>
+      <ul class="rights-list">
+        <li>На захист прав і свобод, визначених Конвенцією ООН про права дитини, на охорону життя, здоров'я і власного майна, повагу до їх гідності, вільне висловлювання власних поглядів і переконань</li>
+        <li>Кваліфікована медична допомога в разі захворювання або травмування</li>
+        <li>Самостійно обирати види діяльності, дозвілля, участь в освітніх та оздоровчих програмах закладу</li>
+        <li>Здобувати у передбачених законодавством випадках освіту згідно з державними стандартами</li>
+        <li>Отримувати зазначені в путівці послуги з оздоровлення та відпочинку, в тому числі платні</li>
+        <li>На раціональне харчування</li>
+        <li>Брати участь в управлінні дитячим закладом оздоровлення та відпочинку</li>
+        <li>Звертатися до адміністрації закладу для отримання інформації стосовно побуту, харчування, медичної допомоги, змісту освітніх та оздоровчих програм</li>
+        <li>У разі виникнення конфліктної ситуації вимагати вжиття дієвих заходів, у тому числі заміни вихователя</li>
+      </ul>
+
+      <div class="rights-obligations">
+        <div class="rights-subtitle" style="margin-top:0">Обов'язки дитини</div>
+        <p>Діти під час перебування у дитячих закладах оздоровлення та відпочинку зобов'язані виконувати правила внутрішнього розпорядку цих закладів.</p>
+        <p>Порушення вимог внутрішнього розпорядку тягне за собою негайне відрахування дитини із закладу та відправлення до місця постійного проживання за рахунок батьків або інших законних представників.</p>
+        <p class="rights-law-note">Стаття 30 та стаття 17 Закону України "Про оздоровлення та відпочинок дітей"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARENTS RIGHTS ═══════════════ -->
+<section id="parents-rights" class="section" style="background: var(--white);">
+  <div class="rights-wrap">
+    <div class="rights-left">
+      <div class="section-eyebrow">
+        <div class="line"></div><span>Для батьків</span>
+      </div>
+      <h2>Права та обов'язки батьків</h2>
+      <p>Батьки або інші законні представники дітей мають гарантовані права та несуть відповідальність відповідно до статті 31 Закону України "Про оздоровлення та відпочинок дітей".</p>
+    </div>
+    <div>
+      <div class="rights-subtitle">Права батьків</div>
+      <ul class="rights-list">
+        <li>Ознайомитися із статутом закладу, правилами перебування дитини, змістом освітніх, оздоровчих, медичних програм або програм відпочинку</li>
+        <li>Захищати права та законні інтереси дитини в разі отримання від неї відповідної інформації</li>
+        <li>Подавати керівнику закладу усні або письмові заяви про випадки насильства або жорстокого поводження з дитиною та вимагати невідкладного реагування (протягом однієї доби)</li>
+        <li>Звертатися до адміністрації закладу, його засновника (власника), органів виконавчої влади та місцевого самоврядування з питань поліпшення роботи закладу</li>
+      </ul>
+
+      <div class="rights-obligations">
+        <div class="rights-subtitle" style="margin-top:0">Обов'язки батьків</div>
+        <ul class="rights-list">
+          <li>Забезпечити дитину необхідним одягом, взуттям та засобами гігієни на час перебування в таборі</li>
+          <li>Провести з дитиною превентивну роботу щодо запобігання шкідливим звичкам</li>
+          <li>Забезпечити проходження дитиною медичного обстеження</li>
+          <li>Надавати працівникам закладу інформацію про індивідуальні особливості дитини</li>
+          <li>Відвідувати дитину в закладі та у терміни, визначені у путівці, забрати її із закладу</li>
+          <li>Відшкодувати збитки закладу внаслідок недисциплінованої поведінки дитини</li>
+          <li>У разі дострокового відправлення дитини додому за недисциплінованість — відшкодувати витрати закладу на супроводження дитини до постійного місця проживання</li>
+        </ul>
+        <p class="rights-law-note" style="margin-top:1rem">Стаття 31 Закону України "Про оздоровлення та відпочинок дітей"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ ACCOMMODATION MODAL ═══════════════ -->
 <div class="modal" id="accom-modal" aria-hidden="true">
   <div class="modal-overlay" data-close></div>
@@ -1622,6 +1900,14 @@
 </a>
 
 <script>
+  // Programs tabs
+  function switchProgTab(btn, panelId) {
+    document.querySelectorAll('.prog-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.prog-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+  }
+
   // FAQ
   function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
