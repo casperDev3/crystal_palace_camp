@@ -361,7 +361,7 @@
   /*──────────────────────────────────────────
     SESSIONS
   ──────────────────────────────────────────*/
-  #sessions { background: var(--white); display: none;}
+  #sessions { background: var(--white); }
   .sessions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -893,6 +893,53 @@
     .scroll-ind { display: none; }
   }
   /*──────────────────────────────────────────
+    TEAM
+  ──────────────────────────────────────────*/
+  #team { background: var(--light); }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; }
+  .team-card { text-align: center; }
+  .team-photo {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center;
+    border-radius: 4px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.1);
+    display: block;
+    transition: transform .3s var(--easing), box-shadow .3s;
+  }
+  .team-card:hover .team-photo { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.15); }
+  .team-name { font-weight: 700; font-size: .9rem; margin-top: 1.1rem; }
+  .team-role { font-size: .72rem; color: var(--gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: .3rem; }
+  .team-bio { font-size: .78rem; color: #888; font-weight: 300; line-height: 1.6; margin-top: .6rem; }
+  @media (max-width: 1024px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; } }
+
+  /*──────────────────────────────────────────
+    CERTIFICATES
+  ──────────────────────────────────────────*/
+  #certificates { background: var(--dark); }
+  #certificates .section-h { color: var(--white); }
+  #certificates .section-p { color: rgba(255,255,255,.5); }
+  .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .cert-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(162,144,97,.2);
+    border-radius: 4px; padding: 2rem 1.5rem;
+    text-align: center;
+    transition: border-color .3s, background .3s;
+  }
+  .cert-card:hover { border-color: var(--gold); background: rgba(162,144,97,.06); }
+  .cert-icon {
+    width: 52px; height: 52px; margin: 0 auto 1.2rem;
+    border: 1px solid rgba(162,144,97,.3); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+  }
+  .cert-icon .icon { width: 24px; height: 24px; }
+  .cert-name { font-weight: 700; font-size: .85rem; color: var(--white); }
+  .cert-desc { font-size: .75rem; color: rgba(255,255,255,.4); font-weight: 300; margin-top: .4rem; line-height: 1.5; }
+  @media (max-width: 1024px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .cert-grid { grid-template-columns: 1fr 1fr; gap: 1rem; } }
+
+  /*──────────────────────────────────────────
     PROGRAMS
   ──────────────────────────────────────────*/
   #programs { background: var(--dark); }
@@ -953,14 +1000,6 @@
     RIGHTS
   ──────────────────────────────────────────*/
   #rights { background: var(--light); }
-  .rights-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
-  .rights-left h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
-    font-weight: 600; color: var(--dark); line-height: 1.15;
-    margin: .8rem 0 1.5rem;
-  }
-  .rights-left p { font-size: .88rem; color: #888; font-weight: 300; line-height: 1.8; margin-top: 1rem; }
   .rights-subtitle {
     font-size: .65rem; font-weight: 700; letter-spacing: 3px;
     text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; margin-top: 2rem;
@@ -988,10 +1027,6 @@
   .rights-law-note {
     font-size: .72rem; color: #aaa; font-style: italic; margin-top: .5rem;
   }
-  @media (max-width: 1024px) {
-    .rights-wrap { grid-template-columns: 1fr; gap: 3rem; }
-  }
-
   @media (max-width: 640px) {
     .text-cards { grid-template-columns: 1fr; }
     .modal { padding: 0; }
@@ -1117,6 +1152,25 @@
           <p>Літо стає незабутнім, а кожен день приносить нові враження.</p>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="section-block reverse" style="margin-top: 6rem;">
+    <div>
+      <div class="section-eyebrow">
+        <div class="line"></div><span>Емоції та драйв</span>
+      </div>
+      <h2 class="section-h">Яскравість у кожній миті</h2>
+      <p class="section-p">Ми віримо, що найкраще навчання — це те, що приносить задоволення. Наші заходи розроблені так, щоб кожна дитина відчула себе частиною великої та дружньої спільноти.</p>
+      <ul class="dot-list">
+        <li>Тематичні квести на території та в лісі.</li>
+        <li>Вечірні вогнища та щирі розмови під гітару.</li>
+        <li>Танцювальні батли та творчі виступи на сцені.</li>
+        <li>Фотозвіти для батьків у режимі реального часу.</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img src="media/camp-life.jpg" alt="Емоції дітей у таборі"/>
     </div>
   </div>
 </section>
@@ -1318,27 +1372,34 @@
   </div>
   <div class="gallery-grid">
     <div class="g-item g-big">
-      <img src="media/gallery-1.jpg"
-           alt="Загальний табірний день"/>
+      <img src="media/gallery-1.jpg" alt="Загальний табірний день"/>
     </div>
     <div class="g-item">
-      <img src="media/gallery-2.jpg"
-           alt="Діти на вечірній події"/>
+      <img src="media/gallery-2.jpg" alt="Діти на вечірній події"/>
     </div>
     <div class="g-item">
-      <img src="media/gallery-3.jpg"
-           alt="Квестове завдання"/>
+      <img src="media/gallery-3.jpg" alt="Квестове завдання"/>
     </div>
     <div class="g-item">
-      <img src="media/gallery-4.jpg"
-           alt="Командна активність"/>
+      <img src="media/gallery-4.jpg" alt="Командна активність"/>
     </div>
     <div class="g-item">
-      <img src="media/gallery-5.jpg"
-           alt="Екскурсія табором"/>
+      <img src="media/gallery-5.jpg" alt="Екскурсія табором"/>
+    </div>
+    <div class="g-item">
+      <img src="media/2026-03-24 18.06.11.jpg" alt="Активні ігри"/>
+    </div>
+    <div class="g-item">
+      <img src="media/2026-03-24 18.06.49.jpg" alt="Творчість"/>
+    </div>
+    <div class="g-item">
+      <img src="media/2026-03-27 16.38.11.jpg" alt="Природа Карпат"/>
+    </div>
+    <div class="g-item">
+      <img src="media/2026-03-27 16.38.42.jpg" alt="Відпочинок"/>
     </div>
   </div>
-  <p class="gallery-note">Більше фото у нашому Instagram · @crystalpalace.camp</p>
+  <p class="gallery-note">Більше фото у нашому Instagram · <a href="https://instagram.com/crystalpalace.camp" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(162,144,97,.4);">@crystalpalace.camp</a></p>
 </section>
 
 <!-- ═══════════════ FOOD ═══════════════ -->
@@ -1412,6 +1473,18 @@
         <h3>Природне середовище</h3>
         <p>Табір у лісі — чисте повітря, річка поряд і карпатські пейзажі.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HIGHLIGHTS ═══════════════ -->
+<section id="highlights" class="section" style="padding-top: 0; background: var(--white);">
+  <div class="section-block">
+    <div class="section-media">
+      <img src="media/2026-03-24 18.05.43.jpg" alt="Моменти у таборі"/>
+    </div>
+    <div class="section-media">
+      <img src="media/2026-03-24 18.06.21.jpg" alt="Вечірня програма"/>
     </div>
   </div>
 </section>
@@ -1559,31 +1632,31 @@
     <form onsubmit="handleSubmit(event)">
       <div class="form-group">
         <div class="field-wrap">
-          <label class="field-label">Ваше ім'я</label>
-          <input type="text" placeholder="Наприклад: Оксана" required/>
+          <label class="field-label" for="f-name">Ваше ім'я</label>
+          <input id="f-name" type="text" name="name" placeholder="Наприклад: Оксана" required/>
         </div>
         <div class="field-wrap">
-          <label class="field-label">Телефон</label>
-          <input type="tel" placeholder="+38 (___) ___-__-__" required/>
+          <label class="field-label" for="f-phone">Телефон</label>
+          <input id="f-phone" type="tel" name="phone" placeholder="+38 (___) ___-__-__" required/>
         </div>
       </div>
       <div class="field-wrap">
-        <label class="field-label">Email</label>
-        <input type="email" placeholder="your@email.com" required/>
+        <label class="field-label" for="f-email">Email</label>
+        <input id="f-email" type="email" name="email" placeholder="your@email.com" required/>
       </div>
       <div class="form-group">
         <div class="field-wrap">
-          <label class="field-label">Ім'я дитини</label>
-          <input type="text" placeholder="Ім'я дитини" required/>
+          <label class="field-label" for="f-child">Ім'я дитини</label>
+          <input id="f-child" type="text" name="child_name" placeholder="Ім'я дитини" required/>
         </div>
         <div class="field-wrap">
-          <label class="field-label">Вік дитини</label>
-          <input type="number" placeholder="від 8 до 16" min="8" max="16" required/>
+          <label class="field-label" for="f-age">Вік дитини</label>
+          <input id="f-age" type="number" name="child_age" placeholder="від 8 до 16" min="8" max="16" required/>
         </div>
       </div>
       <div class="field-wrap">
-        <label class="field-label">Зміна</label>
-        <select required>
+        <label class="field-label" for="f-session">Зміна</label>
+        <select id="f-session" name="session" required>
           <option value="" disabled selected>Оберіть зміну</option>
           <option>Зміна 1 · 8–17 червня · 12 900 грн</option>
           <option>Зміна 2 · 20–29 червня · 12 900 грн</option>
@@ -1595,8 +1668,8 @@
         </select>
       </div>
       <div class="field-wrap">
-        <label class="field-label">Коментар</label>
-        <textarea placeholder="Алергії, особливі побажання, запитання..."></textarea>
+        <label class="field-label" for="f-comment">Коментар</label>
+        <textarea id="f-comment" name="message" placeholder="Алергії, особливі побажання, запитання..."></textarea>
       </div>
       <button type="submit" class="form-submit">Надіслати заявку →</button>
       <p class="form-note">Натискаючи кнопку, ви погоджуєтесь з умовами обробки персональних даних</p>
@@ -1635,6 +1708,84 @@
           <p>Безпека — це турбота про кожну дитину та впевненість батьків.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TEAM ═══════════════ -->
+<section id="team" class="section">
+  <div class="tc">
+    <div class="section-eyebrow center">
+      <div class="line"></div><span>Наша команда</span><div class="line"></div>
+    </div>
+    <h2 class="section-h">Люди, яким ви довіряєте своїх дітей</h2>
+    <p class="section-p">Досвідчені педагоги, лікарі та вожаті — кожен пройшов ретельний відбір та навчання</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <img class="team-photo" src="media/about-main.jpg" alt="Директор табору"/>
+      <div class="team-name">Олена Василенко</div>
+      <div class="team-role">Директор</div>
+      <p class="team-bio">15 років у дитячій освіті. Засновниця Crystal Palace. Педагог вищої категорії.</p>
+    </div>
+    <div class="team-card">
+      <img class="team-photo" src="media/gallery-1.jpg" alt="Головний лікар"/>
+      <div class="team-name">Іван Коваль</div>
+      <div class="team-role">Головний лікар</div>
+      <p class="team-bio">Педіатр з 12-річним стажем. Спеціалізація — дитяча та спортивна медицина.</p>
+    </div>
+    <div class="team-card">
+      <img class="team-photo" src="media/gallery-2.jpg" alt="Старший вожатий"/>
+      <div class="team-name">Марія Бондар</div>
+      <div class="team-role">Старша вожата</div>
+      <p class="team-bio">Психолог за освітою. 7 сезонів у таборі. Майстер командних ігор та квестів.</p>
+    </div>
+    <div class="team-card">
+      <img class="team-photo" src="media/gallery-3.jpg" alt="Вожатий"/>
+      <div class="team-name">Дмитро Шевченко</div>
+      <div class="team-role">Вожатий-інструктор</div>
+      <p class="team-bio">Майстер спорту з туризму. Відповідає за гірські походи та активності на природі.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CERTIFICATES ═══════════════ -->
+<section id="certificates" class="section">
+  <div class="tc">
+    <div class="section-eyebrow center">
+      <div class="line" style="background:rgba(162,144,97,.4)"></div><span>Документи</span><div class="line" style="background:rgba(162,144,97,.4)"></div>
+    </div>
+    <h2 class="section-h">Ліцензії та сертифікати</h2>
+    <p class="section-p">Табір Crystal Palace працює відповідно до всіх вимог законодавства України</p>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div class="cert-name">Ліцензія МОН</div>
+      <p class="cert-desc">Ліцензія на провадження освітньої діяльності у сфері позашкільної освіти</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+      </div>
+      <div class="cert-name">Санітарний висновок</div>
+      <p class="cert-desc">Висновок державної санітарно-епідеміологічної служби про відповідність нормам</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="cert-name">Страхування дітей</div>
+      <p class="cert-desc">Кожна дитина застрахована від нещасних випадків на весь термін перебування</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/></svg>
+      </div>
+      <div class="cert-name">Сертифікат якості</div>
+      <p class="cert-desc">Переможець рейтингу "Найкращий дитячий табір України 2025"</p>
     </div>
   </div>
 </section>
@@ -1809,16 +1960,18 @@
 </section>
 
 <!-- ═══════════════ RIGHTS ═══════════════ -->
-<section id="rights" class="section">
-  <div class="rights-wrap">
-    <div class="rights-left">
+<section id="rights" class="section" style="background: var(--light);">
+  <div class="section-block">
+    <div class="section-media">
+      <img src="media/camp-life.jpg" alt="Права дітей у таборі"/>
+    </div>
+    <div>
       <div class="section-eyebrow">
         <div class="line"></div><span>Законодавство</span>
       </div>
-      <h2>Права та обов'язки дітей</h2>
-      <p>Відповідно до Закону України "Про оздоровлення та відпочинок дітей", кожна дитина під час перебування в нашому таборі має гарантовані права та несе певні обов'язки.</p>
-    </div>
-    <div>
+      <h2 class="section-h">Права та обов'язки дітей</h2>
+      <p class="section-p">Відповідно до Закону України "Про оздоровлення та відпочинок дітей", кожна дитина під час перебування в нашому таборі має гарантовані права та несе певні обов'язки.</p>
+
       <div class="rights-subtitle">Права дитини в таборі</div>
       <ul class="rights-list">
         <li>На захист прав і свобод, визначених Конвенцією ООН про права дитини, на охорону життя, здоров'я і власного майна, повагу до їх гідності, вільне висловлювання власних поглядів і переконань</li>
@@ -1828,14 +1981,13 @@
         <li>Отримувати зазначені в путівці послуги з оздоровлення та відпочинку, в тому числі платні</li>
         <li>На раціональне харчування</li>
         <li>Брати участь в управлінні дитячим закладом оздоровлення та відпочинку</li>
-        <li>Звертатися до адміністрації закладу для отримання інформації стосовно побуту, харчування, медичної допомоги, змісту освітніх та оздоровчих програм</li>
+        <li>Звертатися до адміністрації закладу для отримання інформації стосовно побуту, харчування, медичної допомоги</li>
         <li>У разі виникнення конфліктної ситуації вимагати вжиття дієвих заходів, у тому числі заміни вихователя</li>
       </ul>
 
       <div class="rights-obligations">
         <div class="rights-subtitle" style="margin-top:0">Обов'язки дитини</div>
-        <p>Діти під час перебування у дитячих закладах оздоровлення та відпочинку зобов'язані виконувати правила внутрішнього розпорядку цих закладів.</p>
-        <p>Порушення вимог внутрішнього розпорядку тягне за собою негайне відрахування дитини із закладу та відправлення до місця постійного проживання за рахунок батьків або інших законних представників.</p>
+        <p>Діти зобов'язані виконувати правила внутрішнього розпорядку закладу. Порушення тягне за собою негайне відрахування та відправлення до місця постійного проживання за рахунок батьків.</p>
         <p class="rights-law-note">Стаття 30 та стаття 17 Закону України "Про оздоровлення та відпочинок дітей"</p>
       </div>
     </div>
@@ -1843,37 +1995,39 @@
 </section>
 
 <!-- ═══════════════ PARENTS RIGHTS ═══════════════ -->
-<section id="parents-rights" class="section" style="background: var(--white);">
-  <div class="rights-wrap">
-    <div class="rights-left">
-      <div class="section-eyebrow">
-        <div class="line"></div><span>Для батьків</span>
-      </div>
-      <h2>Права та обов'язки батьків</h2>
-      <p>Батьки або інші законні представники дітей мають гарантовані права та несуть відповідальність відповідно до статті 31 Закону України "Про оздоровлення та відпочинок дітей".</p>
-    </div>
+<section id="parents-rights" class="section" style="background: var(--dark);">
+  <div class="section-block reverse">
     <div>
+      <div class="section-eyebrow">
+        <div class="line" style="background:rgba(162,144,97,.5)"></div><span>Для батьків</span>
+      </div>
+      <h2 class="section-h" style="color:var(--white)">Права та обов'язки батьків</h2>
+      <p class="section-p" style="color:rgba(255,255,255,.5)">Батьки або інші законні представники дітей мають гарантовані права та несуть відповідальність відповідно до статті 31 Закону України "Про оздоровлення та відпочинок дітей".</p>
+
       <div class="rights-subtitle">Права батьків</div>
-      <ul class="rights-list">
-        <li>Ознайомитися із статутом закладу, правилами перебування дитини, змістом освітніх, оздоровчих, медичних програм або програм відпочинку</li>
-        <li>Захищати права та законні інтереси дитини в разі отримання від неї відповідної інформації</li>
-        <li>Подавати керівнику закладу усні або письмові заяви про випадки насильства або жорстокого поводження з дитиною та вимагати невідкладного реагування (протягом однієї доби)</li>
-        <li>Звертатися до адміністрації закладу, його засновника (власника), органів виконавчої влади та місцевого самоврядування з питань поліпшення роботи закладу</li>
+      <ul class="rights-list" style="--li-color: rgba(255,255,255,.55)">
+        <li style="color:rgba(255,255,255,.55)">Ознайомитися із статутом закладу, правилами перебування дитини, змістом освітніх, оздоровчих та медичних програм</li>
+        <li style="color:rgba(255,255,255,.55)">Захищати права та законні інтереси дитини в разі отримання від неї відповідної інформації</li>
+        <li style="color:rgba(255,255,255,.55)">Подавати керівнику закладу заяви про випадки насильства або жорстокого поводження та вимагати невідкладного реагування (протягом однієї доби)</li>
+        <li style="color:rgba(255,255,255,.55)">Звертатися до адміністрації закладу, органів виконавчої влади та місцевого самоврядування з питань поліпшення роботи закладу</li>
       </ul>
 
-      <div class="rights-obligations">
+      <div class="rights-obligations" style="background:rgba(255,255,255,.05); border-left-color:var(--gold)">
         <div class="rights-subtitle" style="margin-top:0">Обов'язки батьків</div>
         <ul class="rights-list">
-          <li>Забезпечити дитину необхідним одягом, взуттям та засобами гігієни на час перебування в таборі</li>
-          <li>Провести з дитиною превентивну роботу щодо запобігання шкідливим звичкам</li>
-          <li>Забезпечити проходження дитиною медичного обстеження</li>
-          <li>Надавати працівникам закладу інформацію про індивідуальні особливості дитини</li>
-          <li>Відвідувати дитину в закладі та у терміни, визначені у путівці, забрати її із закладу</li>
-          <li>Відшкодувати збитки закладу внаслідок недисциплінованої поведінки дитини</li>
-          <li>У разі дострокового відправлення дитини додому за недисциплінованість — відшкодувати витрати закладу на супроводження дитини до постійного місця проживання</li>
+          <li style="color:rgba(255,255,255,.55)">Забезпечити дитину необхідним одягом, взуттям та засобами гігієни</li>
+          <li style="color:rgba(255,255,255,.55)">Провести превентивну роботу щодо запобігання шкідливим звичкам</li>
+          <li style="color:rgba(255,255,255,.55)">Забезпечити проходження дитиною медичного обстеження</li>
+          <li style="color:rgba(255,255,255,.55)">Надавати працівникам закладу інформацію про індивідуальні особливості дитини</li>
+          <li style="color:rgba(255,255,255,.55)">Відвідувати дитину та у визначені путівкою терміни забрати її із закладу</li>
+          <li style="color:rgba(255,255,255,.55)">Відшкодувати збитки закладу внаслідок недисциплінованої поведінки дитини</li>
+          <li style="color:rgba(255,255,255,.55)">У разі дострокового відправлення дитини додому — відшкодувати витрати на супроводження</li>
         </ul>
-        <p class="rights-law-note" style="margin-top:1rem">Стаття 31 Закону України "Про оздоровлення та відпочинок дітей"</p>
+        <p class="rights-law-note" style="margin-top:1rem; color:rgba(255,255,255,.3)">Стаття 31 Закону України "Про оздоровлення та відпочинок дітей"</p>
       </div>
+    </div>
+    <div class="section-media">
+      <img src="media/safety.jpg" alt="Права батьків у таборі"/>
     </div>
   </div>
 </section>
@@ -2022,12 +2176,40 @@
   counters.forEach(c => counterObs.observe(c));
 
   // Form submit
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Заявку надіслано! Ми зв\'яжемось з вами.';
-    btn.style.background = '#2d6a2d';
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const originalText = btn.textContent;
+
+    btn.textContent = 'Надсилаємо...';
     btn.disabled = true;
+
+    try {
+      // Замініть YOUR_FORM_ID на ваш ID з formspree.io
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      if (res.ok) {
+        btn.textContent = 'Заявку надіслано! Ми зв\'яжемось з вами.';
+        btn.style.background = '#2d6a2d';
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Помилка. Спробуйте ще раз або зателефонуйте нам.';
+      btn.style.background = 'var(--red)';
+      btn.disabled = false;
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    }
   }
 </script>
 </body>
