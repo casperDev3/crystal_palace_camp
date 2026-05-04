@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Кришталевий — Щасливе дитинство | Оздоровчий табір у Карпатах</title>
+<?php
+/* Template Name: Camp */
+add_action('wp_head', function() { ?>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -688,7 +685,7 @@
   .slider-btn:hover { border-color: var(--gold); background: var(--dark); color: var(--white); transform: scale(1.05); }
   .slider-btn:active { transform: scale(.95); }
   .slider-btn.swiper-button-disabled { opacity: .4; pointer-events: none; }
-  
+
   .slider-pagination {
     position: relative !important;
     bottom: 0 !important;
@@ -1060,8 +1057,7 @@
     font-size: .72rem; color: #aaa; font-style: italic; margin-top: .5rem;
   }
   </style>
-</head>
-<body>
+<?php }); get_header(); ?>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
@@ -1262,7 +1258,7 @@
 
       </div>
     </div>
-    
+
     <div class="slider-controls">
       <button class="slider-btn sessions-prev" aria-label="Попередня зміна">
         <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
@@ -1633,7 +1629,7 @@
 
       </div>
     </div>
-    
+
     <div class="slider-controls">
       <button class="slider-btn testi-prev" aria-label="Попередній відгук">
         <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
@@ -2201,5 +2197,5 @@
     }
   }
 </script>
-</body>
-</html>
+
+<?php get_footer(); ?>
